@@ -71,23 +71,6 @@ model Bill {
 model Notification {
   id String @id @default(cuid())
   userId String
-  title String
-  message String
-  read Boolean @default(false)
-  type String
-  createdAt DateTime @default(now())
-}
-
-model Checkin {
-  id String @id @default(cuid())
-  userId String
-  day Int
-  amount Decimal
-  date DateTime @default(now())
-}
-model Notification {
-  id String @id @default(cuid())
-  userId String
   message String
   read Boolean @default(false)
   createdAt DateTime @default(now())
