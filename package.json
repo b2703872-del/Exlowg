@@ -18,6 +18,9 @@
     "axios": "^1.7.2"
   },
   "devDependencies": {
-    "prisma": "^5.19.0"
+    "prisma": "^5.19.0",
+    "typescript": "^5.3.3",
+    "@types/react": "^18.2.48",
+    "@types/node": "^20.11.0"
   }
-}
+    
