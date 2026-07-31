@@ -1,86 +1,15 @@
-generator client { 
-  provider = "prisma-client-js" 
+generator client {
+  provider = "prisma-client-js"
 }
 
-datasource db { 
+datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL") 
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id String @id @default(cuid())
-  name String
-  email String @unique
-  phone String @unique
-  password String
-  role String @default("USER")
-  appPin String
-  transactionPin String
-  referralCode String @unique
-  referredBy String?
-  isVerified Boolean @default(false)
-  mustChangePin Boolean @default(false)
+  id        String   @id @default(cuid())
+  email     String   @unique
+  balance   Float    @default(0)
   createdAt DateTime @default(now())
-  wallet Wallet?
-  transactions Transaction[]
-  notifications Notification[]
-  checkins Checkin[]
-}
-
-model Wallet {
-  id String @id @default(cuid())
-  userId String @unique
-  balance Decimal @default(0)
-  bonusBalance Decimal @default(0)
-  user User @relation(fields: [userId], references: [id])
-}
-
-model Transaction {
-  id String @id @default(cuid())
-  userId String
-  type String
-  amount Decimal
-  status String
-  reference String @unique
-  description String
-  profit Decimal @default(0)
-  createdAt DateTime @default(now())
-  user User @relation(fields: [userId], references: [id])
-}
-
-model Plan {
-  id String @id @default(cuid())
-  network String
-  name String
-  size String
-  sell_price Decimal
-  cost_price Decimal
-  type String
-}
-
-model Bill {
-  id String @id @default(cuid())
-  userId String
-  type String
-  amount Decimal
-  fee Decimal
-  status String
-  createdAt DateTime @default(now())
-}
-
-model Notification {
-  id String @id @default(cuid())
-  userId String
-  message String
-  read Boolean @default(false)
-  createdAt DateTime @default(now())
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-model Checkin {
-  id String @id @default(cuid())
-  userId String
-  date DateTime @default(now())
-  status String @default("present")
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
