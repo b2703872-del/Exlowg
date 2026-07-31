@@ -1,17 +1,31 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-br from-blue-600 to-purple-700">
-      <div className="text-center text-white">
-        <h1 className="text-5xl font-bold mb-4">EXLOWG</h1>
-        <p className="text-xl mb-8">Cheapest Data, Airtime & Bills in Nigeria</p>
-        <p className="text-lg mb-6">VTU Platform Powered by Speed</p>
-        <a 
-          href="/login" 
-          className="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100"
-        >
-          Get Started
-        </a>
-      </div>
+    <main style={{
+      display: 'flex', 
+      minHeight: '100vh', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center', 
+      background: '#0A84FF',
+      color: 'white',
+      textAlign: 'center',
+      padding: '20px'
+    }}>
+      <h1 style={{fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem'}}>EXLOWG</h1>
+      <p style={{fontSize: '1.25rem', marginBottom: '2rem'}}>Cheapest Data & VTU Platform</p>
+      <a 
+        href="/login" 
+        style={{
+          background: 'white', 
+          color: '#0A84FF', 
+          padding: '12px 32px', 
+          borderRadius: '8px', 
+          fontWeight: 'bold',
+          textDecoration: 'none'
+        }}
+      >
+        Get Started
+      </a>
     </main>
   )
-    }
+}
