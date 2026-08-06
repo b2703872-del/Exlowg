@@ -1,4 +1,4 @@
-'use client' // ADD THIS LINE ON TOP - VERY IMPORTANT
+'use client'
 
 export default function LandingPage() {
   return (
@@ -26,4 +26,4 @@ export default function LandingPage() {
       </div>
     </main>
   )
-          }
+            }
