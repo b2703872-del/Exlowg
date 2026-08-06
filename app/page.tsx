@@ -1,45 +1,126 @@
-import Link from 'next/link'
-
 export default function LandingPage() {
   return (
-    <main className="min-h-screen relative" style={{background: 'linear-gradient(rgba(10,132,255,0.6), rgba(10,132,255,0.6)), url(/nigerian-family.jpg) center/cover'}}>
-      <div className="flex items-center justify-center min-h-screen px-4">
-        <div className="bg-white rounded-[20px] shadow-2xl max-w-md w-full p-8">
-          
-          <div className="text-center mb-6">
-            <h1 className="text-4xl font-bold" style={{color: '#0A84FF'}}>EXLOWG</h1>
-            <p className="text-sm" style={{color: '#0A84FF'}}>Fast • Reliable • Affordable</p>
-          </div>
+    <main className="wrap">
+      <div className="card">
+        {/* Logo area */}
+        <div className="logo">E</div>
 
-          <div className="bg-[#00C851] text-white text-center py-2 rounded-lg text-sm font-semibold mb-4">
-            Join 10,000+ Members Saving Daily
-          </div>
+        <h1>Welcome to EXLOWG</h1>
+        <p className="tagline">Buy your cheap service here</p>
+        
+        {/* Buttons */}
+        <div className="btns">
+          <a href="/login" className="btn btn-fill">Login</a>
+          <a href="/register" className="btn btn-border">Register</a>
+        </div>
 
-          <h2 className="text-2xl font-bold text-center mb-2" style={{color: '#0A84FF'}}>
-            Your One-Stop Platform for Data, Airtime & Bills
-          </h2>
-          <p className="text-gray-600 text-center text-sm mb-6">
-            Join 10K+ Nigerians saving money on MTN, AIRTEL, GLO every day
-          </p>
+        {/* Social Proof */}
+        <div className="proof">
+          🔥 Join 10,000+ users trusting EXLOWG
+        </div>
 
-          <Link href="/register" className="w-full block text-center text-white py-3 rounded-lg font-bold mb-3" style={{background: '#0A84FF'}}>
-            Create Free Account
-          </Link>
-          <Link href="/login" className="w-full block text-center py-3 rounded-lg font-bold border-2" style={{borderColor: '#0A84FF', color: '#0A84FF'}}>
-            Login
-          </Link>
-
-          <div className="flex justify-between mt-6 text-xs text-gray-600">
-            <span>⚡ Instant Delivery</span>
-            <span>💰 Cheapest Rates</span>
-            <span>🎧 24/7 Support</span>
-          </div>
-
-          <p className="text-center font-bold mt-4" style={{color: '#0A84FF'}}>₦50M+ Transactions Processed</p>
-          
-          <p className="text-center text-xs text-gray-400 mt-6">© 2026 EXLOWG. All rights reserved.</p>
+        {/* Sponsor */}
+        <div className="sponsor">
+          <p>Proudly supporting</p>
+          <p className="ministry">Federal Ministry of Communications, Innovation and Digital Economy</p>
         </div>
       </div>
+
+      <style jsx global>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .wrap {
+          min-height: 100vh;
+          background: linear-gradient(180deg, #5B3DF1 0%, #7C5CFF 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+        }
+        .card {
+          background: #fff;
+          width: 100%;
+          max-width: 400px;
+          border-radius: 28px;
+          padding: 40px 28px;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          text-align: center;
+        }
+        .logo {
+          width: 64px;
+          height: 64px;
+          background: linear-gradient(135deg, #5B3DF1, #7C5CFF);
+          color: white;
+          font-size: 32px;
+          font-weight: 900;
+          border-radius: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 20px;
+        }
+        h1 {
+          font-size: 28px;
+          font-weight: 800;
+          color: #1e293b;
+          margin-bottom: 8px;
+        }
+        .tagline {
+          color: #64748b;
+          font-size: 15px;
+          margin-bottom: 32px;
+        }
+        .btns {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 24px;
+        }
+        .btn {
+          padding: 16px;
+          border-radius: 14px;
+          font-weight: 700;
+          font-size: 16px;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+        .btn-fill {
+          background: #5B3DF1;
+          color: white;
+        }
+        .btn-border {
+          background: white;
+          color: #5B3DF1;
+          border: 2px solid #5B3DF1;
+        }
+        .btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(91, 61, 241, 0.3);
+        }
+        .proof {
+          color: #16a34a;
+          font-weight: 700;
+          font-size: 14px;
+          margin-bottom: 24px;
+        }
+        .sponsor {
+          border-top: 1px solid #f1f5f9;
+          padding-top: 18px;
+          font-size: 12px;
+          color: #94a3b8;
+        }
+        .ministry {
+          color: #475569;
+          font-weight: 600;
+          font-size: 11px;
+          line-height: 1.4;
+          margin-top: 4px;
+        }
+      `}</style>
     </main>
   )
-            }
+          }
