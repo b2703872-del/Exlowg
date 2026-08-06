@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 export default function RegisterPage() {
   const [form, setForm] = useState({name: '', email: '', phone: '', password: ''})
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -35,7 +36,23 @@ export default function RegisterPage() {
 
           <div>
             <label style={{fontSize: '14px', fontWeight: '600', color: '#475569', display: 'block', marginBottom: '6px'}}>Password</label>
-            <input type="password" required placeholder="Min 6 characters" value={form.password} onChange={(e)=>setForm({...form, password: e.target.value})} style={{width: '100%', padding: '14px', borderRadius: '12px', border: '1px solid #e2e8f0', fontSize: '15px'}}/>
+            <div style={{position: 'relative'}}>
+              <input 
+                type={showPassword ? "text" : "password"} 
+                required 
+                placeholder="Min 6 characters" 
+                value={form.password} 
+                onChange={(e)=>setForm({...form, password: e.target.value})} 
+                style={{width: '100%', padding: '14px 45px 14px 14px', borderRadius: '12px', border: '1px solid #e2e8f0', fontSize: '15px'}}
+              />
+              <button 
+                type="button" 
+                onClick={()=>setShowPassword(!showPassword)}
+                style={{position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer'}}
+              >
+                {showPassword ? '🙈' : '👁️'}
+              </button>
+            </div>
           </div>
 
           <button type="submit" style={{padding: '16px', borderRadius: '14px', fontWeight: '700', fontSize: '16px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: 'white', border: 'none', marginTop: '8px'}}>Create Account</button>
