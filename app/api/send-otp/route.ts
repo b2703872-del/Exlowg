@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS, // This is your 16-digit App Password
+      pass: process.env.GMAIL_APP_PASSWORD, // use this one since you said so
     },
   })
 
@@ -30,4 +30,4 @@ export async function POST(request: Request) {
   } catch (error) {
     return NextResponse.json({ success: false, error: error })
   }
-        }
+}
