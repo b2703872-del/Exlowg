@@ -3,15 +3,15 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url = "file:./dev.db"
+  provider = "postgresql"
+  url = env("postgresql://neondb_owner:***********@ep-sparkling-meadow-auj6tb2i-pooler.c-10.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require")
 }
 
 model User {
   id String @id @default(cuid())
   email String @unique
   name String?
-  wallet Float @default(0) // This na the money balance
+  wallet Float @default(0) // This na where user money go dey
   orders Order[]
   createdAt DateTime @default(now())
 }
@@ -21,7 +21,7 @@ model Order {
   userId String
   user User @relation(fields: [userId], references: [id])
   type String // data, airtime, cable
-  network String // mtn, glo
+  network String // mtn, glo, airtel, 9mobile
   phone String
   amount Float
   status String @default("pending") // success, failed
